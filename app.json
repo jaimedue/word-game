@@ -1,0 +1,8 @@
+{
+    "name": "misspelled-word-game",
+    "buildpacks": [
+        {
+            "url": "heroku/maven"
+        }
+    ]
+}

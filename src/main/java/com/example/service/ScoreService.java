@@ -1,6 +1,7 @@
 package com.example.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -24,14 +25,14 @@ public class ScoreService implements ScoreServiceInterface {
 	public List<Score> findAll() {
 		return repository.findAll(Sort.by(Sort.Direction.DESC, "score"));
 	}
-	
-	@Override
-	public List<Score> findTop5() {
-		return repository.findTop5();
-	}
 
 	@Override
-	public int findMinHighScore() {
-		return repository.findMinHighScore();
+	public Score findById(Long id) {
+		Optional<Score> result = repository.findById(id);
+		if (result.isPresent()) {
+			return result.get();
+		} else {
+			return null;
+		}
 	}
 }

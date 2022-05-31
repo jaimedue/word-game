@@ -8,6 +8,5 @@ public interface ScoreServiceInterface {
 	
 	Score create(Score s);
 	List<Score> findAll();
-	List<Score> findTop5();
-	int findMinHighScore();
+	Score findById(Long id);
 }

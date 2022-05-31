@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.model.Score;
 import com.example.service.ScoreService;
@@ -29,13 +30,8 @@ public class ScoreController {
 			return service.findAll();
 		}
 		
-		@GetMapping("/highscores")
-		public List<Score> getHighScores() {
-			return service.findTop5();
-		}
-
-		@GetMapping("highscores/min")
-		public int getMinHighScore() {
-			return service.findMinHighScore();
+		@GetMapping("/{id}")
+		public Score getScore(@PathVariable Long id) {
+			return service.findById(id);
 		}
 }

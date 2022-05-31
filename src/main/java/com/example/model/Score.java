@@ -14,10 +14,13 @@ import javax.persistence.Table;
 public class Score {
 
 	private Long id;
-	private String name;
-	private int score;
+	private String username;
+	private Integer score;
+	private Integer level;
+	private Integer correctCount;
+	private Integer incorrectCount;
 	private Timestamp date;
-	private int level;
+	private Integer accuracy;
 	
 	public Score() {
 		
@@ -33,27 +36,43 @@ public class Score {
 	}
 
 	@Column(name = "username")
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	@Column(name = "score")
-	public int getScore() {
+	public Integer getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	public void setScore(Integer score) {
 		this.score = score;
 	}
 
 	@Column(name = "level")
-	public int getLevel() {
+	public Integer getLevel() {
 		return level;
 	}
-	public void setLevel(int level) {
+	public void setLevel(Integer level) {
 		this.level = level;
+	}
+
+	@Column(name = "correct_count")
+	public Integer getCorrectCount() {
+		return correctCount;
+	}
+	public void setCorrectCount(Integer correctCount) {
+		this.correctCount = correctCount;
+	}
+
+	@Column(name = "incorrect_count")
+	public Integer getIncorrectCount() {
+		return incorrectCount;
+	}
+	public void setIncorrectCount(Integer incorrectCount) {
+		this.incorrectCount = incorrectCount;
 	}
 
 	@Column(name = "date")
@@ -64,13 +83,13 @@ public class Score {
 		this.date = date;
 	}
 
-	
-	public Score(String name, int score, int level) {
-		this.name = name;
-		this.score = score;
-		this.level = level;
+	@Column(name = "accuracy")
+	public Integer getAccuracy() {
+		return accuracy;
 	}
-	
+	public void setAccuracy(Integer accuracy) {
+		this.accuracy = accuracy;
+	}
 	
 }
 

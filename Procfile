@@ -1,1 +1,1 @@
-web: java -Dspring.profiles.active=prod -Dserver.port$PORT -jar build/libs/wordgameapi-0.0.1-SNAPSHOT.jar
+web: java -Dspring.profiles.active=prod -Dserver.port$PORT -jar build/target/wordgameapi-0.0.1-SNAPSHOT.jar
